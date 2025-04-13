@@ -1,6 +1,6 @@
 {
-  "name": "project-1",
-  "version": "0.0.0",
+  "name": "pai-tender-system",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
