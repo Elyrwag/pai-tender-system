@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<h2>Dodaj nowy przetarg</h2>
+<form method="POST" action="/tenders">
+    <div class="mb-3">
+        <label for="title" class="form-label">Tytuł przetargu</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="mb-3">
+        <label for="institution" class="form-label">Instytucja zamawiająca</label>
+        <input type="text" class="form-control" id="institution" name="institution" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Opis przetargu</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Data i godzina rozpoczęcia</label>
+        <input type="datetime-local" class="form-control" id="startDate" name="start_date" required>
+    </div>
+    <div class="mb-3">
+        <label for="endDate" class="form-label">Data i godzina zakończenia</label>
+        <input type="datetime-local" class="form-control" id="endDate" name="end_date" required>
+        <div id="endDateError" class="text-danger" style="display:none;"></div>
+    </div>
+    <div class="mb-3">
+        <label for="budget" class="form-label">Budżet przetargu (PLN)</label>
+        <input type="number" class="form-control" id="budget" name="budget" step="0.01" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj przetarg</button>
+</form>
+
+<%- include('partials/footer') %>
+
+<script src="/javascripts/add_tender.js"></script>

@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+<h2>Lista aktualnych przetargów</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Tytuł</th>
+            <th>Data rozpoczęcia</th>
+            <th>Data zakończenia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% tenders.forEach((tender, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><a href="/tenders/<%= tender.id %>"><%= tender.title %></a></td>
+                <td><%= tender.start_date %></td>
+                <td><%= tender.end_date %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+<%- include('partials/footer') %>

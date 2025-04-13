@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<h2><%= tender.title %></h2>
+<p><strong>Instytucja:</strong> <%= tender.institution %></p>
+<p><strong>Opis:</strong> <%= tender.description %></p>
+<p><strong>Data rozpoczęcia:</strong> <%= tender.start_date %></p>
+<p><strong>Data zakończenia:</strong> <%= tender.end_date %></p>
+
+<% if (isActive) { %>
+    <a href="/tenders/<%= tender.id %>/offer" class="btn btn-primary">Złóż ofertę</a>
+<% } else { %>
+    <p class="text-danger">Przetarg zakończony</p>
+
+    <% if (isWinner) { %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Wykonawca</th>
+                    <th>Zaoferowana kwota</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% offers.forEach((offer, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= offer.bidder_name %></td>
+                    <td><%= numberWithSpaces(offer.offer_value) %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    <% } else {%>
+        <div>Brak rozstrzygnięcia</div>
+    <% }%>
+<% } %>
+
+<%- include('partials/footer') %>

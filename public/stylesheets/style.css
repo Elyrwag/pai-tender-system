@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  /*          first choice     second    third   default */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #00B7FF;
+}
+
+footer {
+  padding: 10px 0;
+  background-color: #f8f9fa;
+  margin-top: auto;
+}
+
+.container {
+  flex: 1;
+}

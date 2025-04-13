@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h2>Złóż ofertę - <%= tender.title %></h2>
+<form method="POST" action="/tenders/<%= tender.id %>/offer">
+    <div class="mb-3">
+        <label for="bidderName" class="form-label">Nazwa instytucji / osoba</label>
+        <input type="text" class="form-control" id="bidderName" name="bidderName" required>
+    </div>
+    <div class="mb-3">
+        <label for="offerValue" class="form-label">Wartość oferty (PLN)</label>
+        <input type="number" class="form-control" id="offerValue" name="offerValue" step="0.01" required>
+    </div>
+    <button type="submit" class="btn btn-success">Złóż ofertę</button>
+</form>
+
+<%- include('partials/footer') %>
